@@ -80,13 +80,13 @@ class DBStorage:
                 return obj
         return None
     
-    def get_username_email(self, data):
+    def get_by_username_email(self, data):
         """get a user by username or email"""
         if data is not None:
             user_objs = models.storage.all("User").values()
             for user in user_objs:
                 if user.user_name == data or user.email == data:
-                    return obj
+                    return user
         return None
     
     def count(cls=None):
