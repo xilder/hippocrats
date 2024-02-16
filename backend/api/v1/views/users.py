@@ -11,11 +11,11 @@ from flask import session
 def register():
     """registers new user"""
 
-    if not request.json():
+    if not request.get_json():
         return make_response(jsonify({"error": "Not a JSON"}), 400)
-    new_user = request.json()
+    new_user = request.get_json()
     
-    if storage.get_by_username_email(new_user["username"]):
+    if storage.get_by_username_email(new_user["user_name"]):
         return make_response(jsonify({"error": "username already exists"}), 409)
     
     if storage.get_by_username_email(new_user["email"]):
@@ -40,8 +40,8 @@ def login():
     user = storage.get_by_username_email(username)
     if not user:
         error = "Invalid username"
-    # elif user["password"] != password:
-    #     error = "Invalid password"
+    elif user["password"] != password:
+        error = "Invalid password"
 
     if error is None:
         session["user_id"] = user["id"]
