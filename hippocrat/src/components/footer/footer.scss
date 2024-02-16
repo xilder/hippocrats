@@ -1,0 +1,27 @@
+footer {
+  width: 100%;
+  background-color: rgba($color: #5767ee, $alpha: 0.96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  //   border: 2px solid black;
+
+  .sm-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(auto + 30px);
+
+    .icons {
+        background-color: inherit;
+    }
+  }
+
+}
