@@ -72,32 +72,32 @@ class DBStorage:
         return new_dict
 
     def get(self, cls=None, id=None):
-        """get a particular object"""
+        """get a particular object using the class and id"""
         if cls not in models.values():
             return None
         if id is not None:
-            objs = models.storage.all(cls).values()
+            objs = self.all(cls).values()
             for obj in objs:
                 if obj.id == id:
-                    return obj
+                    return obj.to_dict()
         return None
 
     def get_by_username_email(self, data):
         """get a user by username or email"""
         if data is not None:
-            user_objs = models.storage.all("User").values()
+            user_objs = self.all("User").values()
             for user in user_objs:
                 if user.user_name == data or user.email == data:
-                    return user
+                    return user.to_dict()
         return None
     
-    def count(cls=None):
+    def count(self, cls=None):
         """gets the number of objects in storage"""
         if cls is None:
             all_classes = models.values()
             count = 0
             for clss in all_classes:
-                count += len(models.storage.all(clss).values())
+                count += len(self.all(clss).values())
         else:
-            count = len(models.storage.all(cls).values())
+            count = len(self.all(cls).values())
         return count
