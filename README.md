@@ -1,1 +1,1 @@
-# students_of_hippocrates
+# hippocrats
