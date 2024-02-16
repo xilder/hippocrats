@@ -1,10 +1,17 @@
 #!/bin/bash/python3
 """api app"""
+from config import ApplicationConfig
 from flask import Flask, abort, make_response, jsonify
+from flask_cors import CORS
+from flask_session import Session
 from api.v1.views import app_views
 from models import storage
 
 app = Flask(__name__)
+app.config.from_object(ApplicationConfig)
+session_app = Session(app)
+cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+
 app.register_blueprint(app_views)
 
 
