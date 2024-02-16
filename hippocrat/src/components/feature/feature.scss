@@ -1,0 +1,12 @@
+.feature {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 4px;
+  //   flex: 1 0 30%;
+  width: 300px;
+  height: 200px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
