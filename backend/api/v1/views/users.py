@@ -34,7 +34,7 @@ def login():
         return make_response(jsonify({"error": "Not a JSON"}), 400)
     
     user_obj = request.get_json()
-    username = user_obj.get("user_name", None)
+    username = user_obj.get("data", None)
     password = user_obj.get("password", None)
 
     user = storage.get_by_username_email(username)
