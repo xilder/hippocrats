@@ -1,24 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
+import Header from "../../components/header/header";
 import Feature from "../../components/feature/feature";
 import features from "../../components/feature/features";
 import Footer from "../../components/footer/footer";
 import "./home.scss";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+const Home = () => {
+
     return (
       <div className="home">
-        <header className="logo">
-          <img src="../assets/img.jpg" alt="Logo" />
-          {/* <nav className='navbar'>
-                        <a href='#'>Login/Register</a>
-                        <a href='#'>About Us</a>
-                        <a href='#'>Contact Us</a>
-                    </nav> */}
-        </header>
+        <Header />
         <main>
           <section className="sections" id="hero">
             <div>
@@ -85,7 +76,7 @@ class Home extends Component {
                       required
                     />
                   </label>
-                  <input type="submit" name="submit" id="submit" />
+                  <input type="submit" name="submit" className="submit" />
                 </fieldset>
               </form>
             </div>
@@ -96,6 +87,5 @@ class Home extends Component {
       </div>
     );
   }
-}
 
 export default Home;
