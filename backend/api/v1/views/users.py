@@ -39,7 +39,7 @@ def login():
 
     user = storage.get_by_username_email(username)
     if not user:
-        error = "Invalid username"
+        error = "Invalid username or email"
     elif user["password"] != password:
         error = "Invalid password"
 
@@ -49,7 +49,7 @@ def login():
     return make_response(jsonify({"error": error}), 401)
 
 
-@app_views.route("/@me", methods=["POST"])
+@app_views.route("/@me", methods=["GET"])
 def get_current_user():
     """keeps a user logged in"""
     user_id = session.get("user_id")
@@ -58,10 +58,11 @@ def get_current_user():
         return make_response(jsonify({"error": "unauthorised"}), 401)
     
     user = storage.get("User", user_id)
-    return make_response(jsonify({user.to_dict()}), 200)
+    del user["password"]
+    return make_response(jsonify(user), 200)
 
 
-@app_views.route("/logout", methods=["POST"])
+@app_views.route("/logout", methods=["GET"])
 def logout_user():
     """logs out a user"""
     session.pop("user_id")

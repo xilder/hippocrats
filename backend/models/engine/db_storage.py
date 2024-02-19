@@ -73,8 +73,6 @@ class DBStorage:
 
     def get(self, cls=None, id=None):
         """get a particular object using the class and id"""
-        if cls not in models.values():
-            return None
         if id is not None:
             objs = self.all(cls).values()
             for obj in objs:

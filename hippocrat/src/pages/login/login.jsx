@@ -8,23 +8,34 @@ const Login = () => {
   const [data, setData] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginUser = async () => {
-    try {
-      const response = await httpClient.post("//localhost:5000/api/v1/login", {
-        data,
-        password,
-      });
-      console.log(response)
-    } catch (e) {
-      alert(e.response.data.error);
-    }
+  const loginUser = (e) => {
+    e.preventDefault();
+    (async () => {
+      if (!data) {
+        alert("please enter username or email");
+      } else if (!password) {
+        alert("please enter password");
+      } else {
+        try {
+          await httpClient.post("//localhost:5000/api/v1/login", {
+            data,
+            password,
+          });
+          // console.log(response);
+          window.location.href = "/profile";
+        } catch (e) {
+          // console.log(e)
+          if (Object.hasOwn(e, "response")) alert(e.response.data.error);
+          else alert("Server down. Please try again after sometime");
+        }
+      }
+    })();
   };
-
   return (
     <div className="login">
       <Header />
       <div className="login-form">
-        <form>
+        <form onSubmit={loginUser}>
           <fieldset>
             <legend>Login</legend>
             <label>
@@ -49,9 +60,7 @@ const Login = () => {
                 required
               />
             </label>
-            <button type="button" className="submit" onClick={loginUser}>
-              Login
-            </button>
+            <input type="submit" className="submit" value="Login" />
           </fieldset>
         </form>
       </div>

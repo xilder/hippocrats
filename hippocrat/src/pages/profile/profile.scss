@@ -44,10 +44,21 @@
       border-radius: 10px;
       border: 1px solid black;
 
-    button {
+      button {
         float: right;
         margin-right: 15px;
-    }
+      }
     }
   }
+}
+
+.submit {
+  position: relative;
+  left: 200px;
+  display: hidden;
+  border: 2px solid purple;
+  border-radius: 5px;
+  width: 100px;
+  height: 50;
+  padding: 8px 5px;
 }
