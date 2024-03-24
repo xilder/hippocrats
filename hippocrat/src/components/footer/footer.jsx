@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSquareXTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "./footer.scss";
 
 const Footer = () => {
@@ -9,9 +12,14 @@ const Footer = () => {
           <p>&copy;2024</p>
         </div>
         <div className="sm-icons">
-          <img alt="Twitter" className="icons" />
-          <img alt="FB" className="icons" />
-          <img alt="IG" className="icons" />
+          <a href="https://x.com/_hippocrat" target="_blank" rel="noreferrer">
+            <FontAwesomeIcon icon={faSquareXTwitter} />
+            <p>X</p>
+          </a>
+          <a href="mailto:abel.fagbemi@med.uniben.edu">
+            <FontAwesomeIcon icon={faEnvelope} />
+            <p>Gmail</p>
+          </a>
         </div>
       </div>
     </footer>

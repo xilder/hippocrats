@@ -1,17 +1,21 @@
 import React from "react";
+// import { useNavigate } from "react-router-dom";
+import logo from "../../assets/hippocrat_logos.png"
 import "./header.scss";
 
 const Header = () => {
+
   return (
-    <header className="logo">
+    <header className="header">
       <div className="logo">
-        <img src="../assets/img.jpg" alt="Logo" />
+        <img src={logo} alt="Logo" />
       </div>
       <div>
         <nav className="navbar">
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
-          <a href="/#contact-us">Contact Us</a>
+          <a href="/">HOME</a>
+          <a href="/login">LOGIN</a>
+          <a href="/register">REGISTER</a>
+          <a href="/#contact-us">CONTACT US</a>
         </nav>
       </div>
     </header>
