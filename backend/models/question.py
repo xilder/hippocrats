@@ -16,23 +16,19 @@ class Question(BaseModel, Base):
         clinical (str): clinical or non_clinical
         course (str): course title
         sub_course (str): sub_course
-        question_type (str): question type
-        question_text (str): question text
+        type (str): question type
+        text (str): question text
     """
     if getenv("ENV_DB") == "db":
         __tablename__ = "questions"
         user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
-        clinical = Column(String(20), nullable=False)
         course = Column(String(20), nullable=False)
-        sub_course = Column(String(20))
-        question_type = Column(String(10), nullable=False)
-        question_text = Column(String(4096), nullable=False)
+        type = Column(String(10), nullable=False)
+        text = Column(String(4096), nullable=False)
         explanations = relationship("Explanation", backref="question")
         options = relationship("Option", backref="question")
     else:
         user_id = ""
-        clinical = ""
         course = ""
-        sub_course = ""
-        question_type = ""
-        question_text = ""
+        type = ""
+        text = ""
