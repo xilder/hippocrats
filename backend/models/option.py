@@ -21,11 +21,11 @@ class Option(BaseModel, Base):
         user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
         question_id = Column(String(60), ForeignKey("questions.id"), nullable=False)
         option = Column(String(1), nullable=False)
-        option_text = Column(String(256), nullable=False)
+        text = Column(String(256), nullable=False)
         valid = Column(String(1), nullable=False)
     else:
         user_id = ""
         question_id = ""
         option = ""
-        option_text = ""
+        text = ""
         valid = ""
