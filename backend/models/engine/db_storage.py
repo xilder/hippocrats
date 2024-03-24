@@ -9,6 +9,7 @@ from models.explanation import Explanation
 from models.option import Option
 from models.question import Question
 from models.user import User
+from models.review import Review
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from os  import getenv
@@ -17,7 +18,8 @@ models = {
         "Explanation": Explanation,
         "Option": Option,
         "Question": Question,
-        "User": User
+        "User": User,
+        "Review": Review
     }
 
 class DBStorage:
@@ -85,7 +87,7 @@ class DBStorage:
         if data is not None:
             user_objs = self.all("User").values()
             for user in user_objs:
-                if user.user_name == data or user.email == data:
+                if user.username == data or user.email == data:
                     return user.to_dict()
         return None
     
