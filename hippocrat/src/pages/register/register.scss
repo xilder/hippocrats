@@ -1,54 +1,57 @@
 .register-form {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-  
-    form {
-      height: auto;
-      width: 350px;
-  
-      fieldset {
-        position: relative;
-        border-radius: 5px;
-        padding: 10px 10px 0 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 100%;
-        width: 100%;
-        padding: 20px 10px;
-      }
-      label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+  form {
+    height: auto;
+    width: 350px;
+
+    fieldset {
+      position: relative;
+      border-radius: 5px;
+      padding: 10px 10px 0 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      width: 100%;
+      padding: 20px 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 12px;
+
+      span {
         display: block;
-        margin-bottom: 10px;
-  
-        span {
-          display: block;
-        }
-  
-        input {
-          position: relative;
-          left: 30px;
-          border: none;
-          border-bottom: 2px solid black;
-          margin-top: 15px;
-          background-color: inherit;
-          width: 250px;
-        }
+      }
+
+      input {
+        position: relative;
+        left: 30px;
+        padding: 0 20px;
+        border: 1px solid black;
+        height: 32px;
+        border-radius: 16px;
+        margin-top: 15px;
+        background-color: inherit;
+        width: 250px;
+        font-size: 10px;
       }
     }
   }
-  
-  .submit {
-    position: relative;
-    left: 200px;
-    display: hidden;
-    border: 2px solid purple;
-    border-radius: 5px;
-    width: 100px;
-    height: 50;
-    padding: 8px 5px;
-  }
-  
+}
+
+.submit {
+  position: relative;
+  left: 200px;
+  display: hidden;
+  border: 2px solid purple;
+  border-radius: 5px;
+  width: 100px;
+  height: 50;
+  padding: 8px 5px;
+}

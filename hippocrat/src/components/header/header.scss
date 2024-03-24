@@ -1,10 +1,25 @@
+@import "../../assets/constants.scss";
 header {
-  width: 100%;
+  margin: 20px 40px 0 40px;
+  width: auto;
   height: 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10px;
+  padding: 0;
+
+  .logo {
+    width: auto;
+    height: auto;
+    // border: 1px solid black;
+    z-index: 2;
+
+    img {
+      // object-fit: cover;
+      width: 120px;
+      height: 52px;
+    }
+  }
 
   .navbar {
     display: flex;
@@ -12,8 +27,26 @@ header {
     align-items: center;
 
     a {
+      position: relative;
       margin: 1px 3px;
       text-decoration: none;
+      font-size: 12px;
+      margin: 5px;
+      color: black;
+    }
+    a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      // display: block;
+      height: 1px;
+      width: 100%;
+      background: black;
+      // margin-top: 20px;
+    }
+    a:hover {
+      color: rgb(159, 70, 70);
     }
   }
 }

@@ -1,0 +1,15 @@
+@import "../../assets/constants.scss";
+
+.explanation {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  // width: 50%;
+  height: auto !important;
+  text-align: justify;
+  box-shadow: $primary-shadow;
+  border-radius: 5px;
+  padding: 4px 20px;
+  margin: 0 auto;
+  border: 1px solid black;
+}

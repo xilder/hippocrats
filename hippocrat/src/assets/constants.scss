@@ -2,3 +2,20 @@ $primary: #000000;
 $secondary: #ffffff;
 $background: #f3f6f7;
 $accent: #808080;
+
+.hide {
+  display: none;
+}
+
+// colour palette
+
+$primary: #000000;
+$secondary: #ffffff;
+$background: #f3f6f7;
+$primary-accent: #000000b0;
+$secondary-accent: #ffffff9c;
+$accent: #5600eeaa;
+$transparent-background: #333333a2;
+$primary-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  0 6px 20px 0 rgba(0, 0, 0, 0.19);
+$red-shadow: 0 4px 8px 0 rgba(255, 0, 0, 0.6), 0 6px 20px 0 rgba(255, 0, 0, 0.6);

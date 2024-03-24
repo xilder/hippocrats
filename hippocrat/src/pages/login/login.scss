@@ -1,13 +1,16 @@
+@import "../../assets/constants.scss";
+
 .login-form {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
   width: 100%;
 
   form {
     height: auto;
     width: 350px;
+    margin-bottom: 150px;
 
     fieldset {
       position: relative;
@@ -23,6 +26,7 @@
     label {
       display: block;
       margin-bottom: 10px;
+      font-size: 12px;
 
       span {
         display: block;
@@ -31,23 +35,33 @@
       input {
         position: relative;
         left: 30px;
-        border: none;
-        border-bottom: 2px solid black;
+        padding: 0 20px;
+        border: 1px solid black;
+        height: 32px;
+        border-radius: 16px;
         margin-top: 15px;
         background-color: inherit;
         width: 250px;
+        font-size: 10px;
       }
     }
   }
 }
 
-.submit {
+.button {
   position: relative;
   left: 200px;
-  display: hidden;
-  border: 2px solid purple;
-  border-radius: 5px;
+  // display: hidden;
+  border: 1px;
+  border-radius: 16px;
   width: 100px;
-  height: 50;
-  padding: 8px 5px;
-}
+  height: 32px;
+  box-shadow: $primary-shadow;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  // padding: 8px 5px;
+ }
+ .button:hover {
+  background-color: black;
+ }
