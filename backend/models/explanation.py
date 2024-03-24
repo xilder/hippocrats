@@ -13,14 +13,14 @@ class Explanation(BaseModel, Base):
     Attributes:
         user_id (str): id the of the user that linked to the question
         question_id (str): links 
-        explanation_text (str): question text
+        text (str): question text
     """
     if getenv("ENV_DB") == "db":
         __tablename__ = "explanations"
         user_id = Column(String(60), ForeignKey("users.id"), nullable=False)
         question_id = Column(String(60), ForeignKey("questions.id"), nullable=False)
-        explanation_text = Column(String(4096))
+        text = Column(String(4096))
     else:
         user_id = ""
         question_id = ""
-        explanation_text = ""
+        text = ""
