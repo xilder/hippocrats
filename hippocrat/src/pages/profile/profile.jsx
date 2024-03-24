@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/header/header";
 import httpClient from "../../utils/httpClient";
 import "./profile.scss";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
+  const [time, setTime] = useState(15);
+  const [numberOfQuestions, setNumberOfQuestions] = useState(10);
+  const type = "SBA";
+  const course = "PLAB";
 
   useEffect(() => {
     (async () => {
@@ -13,21 +19,34 @@ const Profile = () => {
         setUser(response.data);
         // console.log(response.data)
       } catch (e) {
-        // alert("Not signed in");
-        // console.log(e)
-        window.location.href = "/login";
+        navigate("/login");
       }
     })();
-  }, []);
+  }, [navigate]);
+
+  const submitData = (e) => {
+    e.preventDefault();
+    (async () => {
+      try {
+        const response = await httpClient.get(
+          `//localhost:5000/api/v1/questions/${course}/${type}/${numberOfQuestions}`
+        );
+        const questions = response.data;
+        console.log(questions);
+        navigate("/quiz", { state: { questions, type, time } });
+      } catch (e) {
+        console.log(e);
+      }
+    })();
+  };
 
   const logoutUser = async () => {
     try {
       await httpClient.get("//localhost:5000/api/v1/logout");
       // console.log(response);
-      window.location.href = "/login";
+      navigate("/login");
     } catch (e) {
-      window.location.href = "/home";
-
+      navigate("/");
     }
   };
 
@@ -36,36 +55,48 @@ const Profile = () => {
       <Header />
       <div className="major-div">
         <div className="user-text">
-          <h3>Hello, {user.user_name}</h3>
-          <p>Delve into the quizzes prepared for you - fun and challenging</p>
-          <button type="button" className="submit" onClick={logoutUser}>
+          <h3>Hello, {user.username}</h3>
+          <p>Get started with a quiz</p>
+          <button type="button" className="logout-btn" onClick={logoutUser}>
             Logout
           </button>
         </div>
-        <div className="options-div">
-          <div className="options">
-            <h3>Subject</h3>
-            <p>100 questions</p>
-            <p>1 hour</p>
-            <button>Take quiz</button>
-          </div>
-          <div className="options">
-            <h3>Subject</h3>
-            <p>100 questions</p>
-            <p>1 hour</p>
-            <button>Take quiz</button>
-          </div>
-          <div className="options">
-            <h3>Subject</h3>
-            <p>100 questions</p>
-            <p>1 hour</p>
-            <button>Take quiz</button>
-          </div>
-          <div className="options">
-            <h3>Subject</h3>
-            <p>100 questions</p>
-            <p>1 hour</p>
-            <button>Take quiz</button>
+        <div className="courses-div">
+          <div className="courses">
+            <form onSubmit={submitData}>
+              <h3>PLAB</h3>
+              <div>
+                {/* <input type="radio" name="type" value="SBA" onChange={(e) => {setType(e.target.value)}} defaultChecked/>
+              <input type="radio" name="type" value="MCQ" onChange={(e) => {setType(e.target.value)}}/> */}
+              </div>
+              <div className="quiz-parameters">
+                <h5 className="quiz-param">
+                  Quiz:{" "}
+                  <input
+                    type="number"
+                    min="10"
+                    max="100"
+                    required
+                    value="10"
+                    onChange={(e) => setNumberOfQuestions(e.target.value)}
+                  />{" "}
+                  questions
+                </h5>
+                <h5 className="quiz-param">
+                  Time:{" "}
+                  <input
+                    type="number"
+                    value="15"
+                    min="10"
+                    max="100"
+                    required
+                    onChange={(e) => setTime(e.target.value)}
+                  />{" "}
+                  minutes
+                </h5>
+              </div>
+              <input className="quiz-btn" type="submit" value="Take the quiz" />
+            </form>
           </div>
         </div>
       </div>
