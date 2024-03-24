@@ -5,6 +5,7 @@ from models.user import User
 from models import storage
 from flask import abort, jsonify, request, make_response
 from flask import session
+from hashlib import md5
 
 
 @app_views.route("/register", methods=["POST"])
@@ -38,9 +39,11 @@ def login():
     password = user_obj.get("password", None)
 
     user = storage.get_by_username_email(username)
+
+    login_password = md5(user_obj["password"].encode()).hexdigest()
     if not user:
         error = "Invalid username or email"
-    elif user["password"] != password:
+    elif user["password"] != login_password:
         error = "Invalid password"
 
     if error is None:
