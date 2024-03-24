@@ -1,19 +1,19 @@
 const features = [
   {
     title: "Extensive Quiz Library",
-    text: "Includes a wide range of quizzes covering diverse medical subjects. Offer various",
+    text: "Includes a wide range of quizzes covering diverse topics",
   },
   {
-    title: "Search and Filter",
-    text: "Allows users to easily search for quizzes by courses and topics",
+    title: "Search and Filter (coming soon)",
+    text: "Search quizzes by courses and topics",
   },
   {
     title: "Quiz Corrections",
-    text: "detailed explanations for correct and incorrect answers",
+    text: "Detailed explanations for each question at the end of each test",
   },
   {
     title: "Progress Tracking(coming soon)",
-    text: "track user progress user data visualisations",
+    text: "Track your progress over time",
   },
 ];
 export default features;
