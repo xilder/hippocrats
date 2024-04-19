@@ -1,8 +1,0 @@
-Steps to setting up the backend on your end
-Run "sudo apt-get update" => "sudo apt-get install mysql-server"
-Run "pip install -r requirements.txt"
-Run "sudo service mysql start"
-Run "sudo echo setup_database.sql | mysql"
-Open mysql and get familiar with it
-Run "USER=dami PWD=BigBunda HOST=localhost DB=hippocrat_db ENV_DB=db python3 -m api.app" from ./backend
-Check ./backend/api/v1/views/* for the different API routes e.g enter "localhost:5000/api/v1/users" to view all users

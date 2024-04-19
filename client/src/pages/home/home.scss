@@ -1,0 +1,352 @@
+@import "../../assets/constants.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Scribble&display=swap");
+
+* {
+  --webkit-box-sizing: border-box;
+  --moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+
+  p {
+    font-size: 13px;
+  }
+}
+
+body {
+  margin: 0px;
+  background-color: white;
+}
+
+.sections {
+  // border: 1px solid red;
+  height: 100vh;
+  width: 100%;
+}
+
+#hero > div {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(240, 240, 240, 0.7);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  #hero-image {
+    height: 300px;
+    padding: 0;
+  }
+
+  .hero-child {
+    position: relative;
+    // flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: $primary-shadow;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 20px auto;
+    width: 300px;
+    height: 250px;
+    padding: 10px;
+    text-align: center;
+    
+    img {
+      object-fit: contain;
+      height: 100%;
+      width: auto; 
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 500;
+      text-align: center;
+    }
+    
+    p {
+      font-size: 12px;
+      margin-bottom: 30px;
+      // border: 1px solid black;
+    }
+
+    .quiz-btn {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      border: 1px;
+      border-radius: 10px;
+      width: auto;
+      height: auto;
+      box-shadow: $primary-shadow;
+      margin-top: 10px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: auto 10px;
+    }
+    .quiz-btn:hover {
+      background-color: black;
+      padding: auto 10px;
+    }
+  }
+}
+
+#features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+#features > div {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+
+  .feature-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: rgba(164, 161, 161, 0.8);
+    border-radius: 2px;
+    height: 90%;
+    width: 250px;
+    // border: 1px solid white;
+    margin: 2px;
+  }
+}
+
+#contact-us {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#contact-us > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(50, 205, 205, 0.1);
+  padding: 0 50px;
+
+  .contact-text {
+    // width: 40%;
+    line-height: 35px;
+  }
+
+  form {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 300px;
+    // margin: auto 10px auto 10px;
+
+    fieldset {
+      position: relative;
+      border-radius: 5px;
+      // padding: 10px 10px 0 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      width: 100%;
+      // padding: 20px 10px;
+
+      legend {
+        font-size: 15px;
+      }
+
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2px;
+      margin-left: 5px;
+      font-size: 12px;
+
+      h3 {
+        display: block;
+      }
+
+      input {
+        padding: 3px 20px;
+        border: 1px solid black;
+        height: auto;
+        border-radius: 16px;
+        margin: 2px auto auto 15px;
+        background-color: inherit;
+        width: 220px;
+      }
+      textarea {
+        background-color: inherit;
+        margin: 2px auto auto 15px;
+        padding: 20px 20px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin-top: 15px;
+        background-color: inherit;
+        width: 220px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .button {
+    position: absolute;
+    left: 180px;
+    bottom: 10px;
+    // display: hidden;
+    border: 1px;
+    border-radius: 8px;
+    padding: 3px 10px;
+    width: auto;
+    height: auto;
+    box-shadow: $primary-shadow;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: auto 10px;
+  }
+  .button:hover {
+    background-color: black;
+    padding: auto 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #hero > div {
+    flex-direction: row;
+    position: relative;
+    top: 2%;
+    height: 95%;
+    width: 95%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    // padding: 10%;
+
+    #hero-text {
+      width: 450px;
+    }
+
+    #hero-image {
+      width: auto;
+      padding: 0;
+      border-radius: 5px;
+      height: 350px;
+    }
+
+    .hero-child {
+      margin: 0px 20px;
+      padding: 0 2.5%;
+      box-shadow: $primary-shadow;
+      // background-color: rgba(50, 10, 190, 0.1);
+      height: 350px;
+      // width: 50px;
+
+      .title {
+        font-size: 25px;
+        font-weight: 900;
+      }
+      .quiz-btn {
+        position: absolute;
+        right: 10%;
+        bottom: 10%;
+        border: 1px;
+        border-radius: 16px;
+        padding: 10px 20px;
+        width: auto;
+        height: auto;
+        box-shadow: $primary-shadow;
+        margin-top: 10px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: auto 10px;
+      }
+      .quiz-btn:hover {
+        background-color: black;
+        padding: auto 10px;
+      }
+
+      img {
+        object-fit: contain;
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  #features > div {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+
+    .feature-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      // background-color: rgba(164, 161, 161, 0.8);
+      border-radius: 2px;
+      height: 500px;
+      width: 800px;
+    }
+  }
+
+  #contact-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #contact-us > div {
+    flex-direction: row;
+
+    .contact-text {
+      width: 40%;
+      line-height: 35px;
+    }
+
+    form {
+      height: auto;
+      width: 300px;
+
+      fieldset {
+        position: relative;
+        border-radius: 5px;
+        // padding: 10px 10px 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+        width: 100%;
+        // padding: 20px 10px;
+
+        legend {
+          font-size: 15px;
+        }
+
+      }
+      label {
+        display: block;
+        font-size: 12px;
+
+        h3 {
+          display: block;
+        }
+      }
+    }
+  }
+
+}

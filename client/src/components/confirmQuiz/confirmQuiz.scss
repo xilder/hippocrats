@@ -1,0 +1,52 @@
+@import "../../assets/constants.scss";
+
+.confirm-quiz-div {
+  box-shadow: $primary-shadow;
+  background-color: rgba(200, 200, 200, 0.7);
+  height: auto;
+  width: auto;
+  padding: 20px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: $primary-shadow;
+
+  .confirm-quiz-btn {
+    // border: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: auto;
+    height: auto;
+
+    .button {
+      position: initial;
+      left: 200px;
+      // display: hidden;
+      border: 1px;
+      border-radius: 16px;
+      padding: 10px 20px;
+      width: auto;
+      height: auto;
+      box-shadow: $primary-shadow;
+      margin: 10px;
+      color: white;
+      padding: auto 10px;
+    }
+
+    .green {
+        background-color: rgba(0, 255, 0, 0.5);
+    }
+    .green:hover {
+        background-color: rgba(0, 255, 0, 0.8);
+    }
+    .red {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+    .red:hover {
+        background-color: rgba(255, 0, 0, 0.8);
+    }
+  }
+}

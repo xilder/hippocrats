@@ -1,0 +1,81 @@
+@import "../../assets/constants.scss";
+
+header {
+  margin: 20px auto 0 auto;
+  width: auto;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+
+  .logo {
+    width: auto;
+    height: auto;
+    // border: 1px solid black;
+    z-index: 2;
+
+    img {
+      // object-fit: cover;
+      width: 70px;
+      height: 30px;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5px;
+
+    a {
+      position: relative;
+      margin: 1px 3px;
+      text-decoration: none;
+      font-size: 10px;
+      margin: auto 2.5px;
+      color: black;
+    }
+    a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      // display: block;
+      height: 1px;
+      width: 100%;
+      background: black;
+      // margin-top: 20px;
+    }
+    a:hover {
+      color: rgb(159, 70, 70);
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  header {
+    margin: 20px 40px 0 40px;
+    width: auto;
+    height: 40px;
+
+    .logo {
+      img {
+        // object-fit: cover;
+        width: 120px;
+        height: 52px;
+      }
+    }
+
+    .navbar {
+      a {
+        position: relative;
+        margin: 1px 3px;
+        text-decoration: none;
+        font-size: 12px;
+        margin: auto 5px;
+        color: black;
+      }
+    }
+  }
+}
