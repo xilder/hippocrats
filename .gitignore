@@ -1,14 +1,16 @@
-./backend/db_test.py
-./backend/main.py
+./server/db_test.py
+./server/main.py
+./server/hippocrat_db.sql
 **/__pycache__
 **/.env
+**/ubuntu*
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+**/node_modules
+**/.pnp
+**/.pnp.js
 **/httpClient.js
 
 # testing
